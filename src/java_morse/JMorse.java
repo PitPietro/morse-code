@@ -61,10 +61,7 @@ public class JMorse {
         s = s.toUpperCase();
         for(int i = 0; i < s.length(); i++) {
             plaintext.add(String.valueOf(s.charAt(i)));
-            // System.out.println(s.charAt(i));
-            System.out.print(plaintext.get(i));
         }
-        System.out.println("\n");
     }
 
     /**
