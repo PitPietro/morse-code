@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class JMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\n");
         JMorse m = new JMorse();
 
         int s = 0;
