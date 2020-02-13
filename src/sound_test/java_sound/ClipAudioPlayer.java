@@ -131,8 +131,9 @@ public class ClipAudioPlayer implements LineListener {
     }
 
     public static void main(String[] args) {
-        String audioFilePath = "src/Dosed.wav";
+        String audioFilePath = "src/line.wav";
         ClipAudioPlayer player = new ClipAudioPlayer();
+        for (int i = 0; i <= 10; i++)
         player.play(audioFilePath);
     }
 
