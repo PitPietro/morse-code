@@ -21,13 +21,13 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * The examples will play with the WAVE format (.wav). Generally, the Java Sound API (package: javax.sound) provides
  * two ways for playing back audio: using a Clip and using a SourceDataLine. Each way has its own advantages and drawbacks.
  *
- * 1. Playing back audio using a Clip
+ * Playing back audio using a Clip
  * Use a Clip (javax.sound.sampled.Clip) when you want to play non-real-time sound data such as a short sound file.
  * The whole file is pre-loaded into memory before playing back, therefore we have total control over the playback.
  *
  * Advantages:
  * 1- It’s possible to start playing from any position in the sound (using either of the Clip’s methods
- * setMicrosecondPosition(long)or setFramePosition(int)).
+ *    setMicrosecondPosition(long)or setFramePosition(int)).
  * 2- It’s possible to repeatedly play (loop) all or a part of the sound (using the setLoopPoints(int, int) and loop(int) methods).
  * 3- It’s possible to know duration of the sound before playing (using the getFrameLength() or getMicrosecondLength() methods).
  * 4- It’s possible to stop playing back at the current position and resume playing later (using the stop() and start() methods).
@@ -35,10 +35,30 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * Drawbacks:
  * 1- It’s not suitable and inefficient to play back lengthy sound data such as a big audio file because it consumes too much memory.
  * 2- The Clip’s start() method does playing the sound but it does not block the current thread (it returns immediately),
- * so it requires to implement the LineListener interface to know when the playing completes.
+ *    so it requires to implement the LineListener interface to know when the playing completes.
+ *
+ * Steps to play:
+ * Following are the steps to implement code for playing back an audio file (typically in .wav format) using the Clip:
+ * > Create an AudioInputStream from a given sound file:
+ *     1| File audioFile = new File(audioFilePath);
+ *     2| AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+
+ * > Acquire audio format and create a DataLine.Infoobject:
+ *     1| AudioFormat format = audioStream.getFormat();
+ *     2| DataLine.Info info = new DataLine.Info(Clip.class, format);
+ *
+ * > Obtain the Clip:
+ *     1| Clip audioClip = (Clip) AudioSystem.getLine(info);
+ *
+ * > Open the AudioInputStream and start playing:
+ *     1| audioClip.open(audioStream);
+ *     2| audioClip.start();
+ *
+ * > Close and release resources acquired:
+ *     1| audioClip.close();
+ *     2| audioStream.close();
  *
  * @author https://www.codejava.net/coding/how-to-play-back-audio-in-java-with-examples
- *
  */
 public class ClipAudioPlayer implements LineListener {
 
