@@ -13,11 +13,9 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
- * In this article we will see, how can we play an audio file in pure java, here pure means, we are not going to use
- * any external library. You can create your own music player by the help of this article. Java inbuilt libraries
- * support only AIFC, AIFF, AU, SND and WAVE formats. There are 2 different interfaces which can be used for this
- * purpose Clip and SourceDataLine. In this article, we will discuss playing audio file using Clip only and see
- * the various methods of clip. We will cover following operations:
+ * Java inbuilt libraries support only AIFC, AIFF, AU, SND and WAVE formats. There are 2 different interfaces which
+ * can be used for this purpose Clip and SourceDataLine. This project will play audio file using Clip only.
+ * It supports the following operations:
  * 1- Start.
  * 2- Pause.
  * 3- Resume.
