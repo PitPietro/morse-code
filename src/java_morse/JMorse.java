@@ -73,6 +73,9 @@ public class JMorse {
     public void printMorse() {
         for (String s : plaintext) {
             System.out.print(getMorseFromChar(s) + " ");
+            if(s.equals(" ")) {
+                System.out.print("\n");
+            }
         }
     }
 
@@ -86,29 +89,30 @@ public class JMorse {
         for (String[] strings : morse) {
             if (strings[0].equals(c)) {
                 msg = strings[1];
+                getSoundFromMorse(strings[1]);
                 break;
             }
         }
         return msg;
     }
 
-    public void getSoundFromMorse() {
+    private void getSoundFromMorse(String morseString) {
         /*for (String[] s : morse) {
             System.out.println(s[1]);
         }*/
 
-        String m = morse[10][1];
-        System.out.println(m);
+        String m = morseString;
+        // System.out.println(m);
 
         for (int i = 0; i < m.length(); ++i) {
-            System.out.println(m.charAt(i));
+            // System.out.println(m.charAt(i));
             char morseChar = m.charAt(i);
             if(morseChar == '.') {
                 new ClipAudioPlayer().play("src/dot.wav");
-                System.out.println("dot");
+                // System.out.println("dot");
             } else if(morseChar == '-') {
                 new ClipAudioPlayer().play("src/line.wav");
-                System.out.println("line");
+                // System.out.println("line");
             }
         }
     }
