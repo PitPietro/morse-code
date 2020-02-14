@@ -1,5 +1,7 @@
 package java_morse;
 
+import sound_test.clip.ClipAudioPlayer;
+
 import java.util.ArrayList;
 
 public class JMorse {
@@ -102,8 +104,10 @@ public class JMorse {
             System.out.println(m.charAt(i));
             char morseChar = m.charAt(i);
             if(morseChar == '.') {
+                new ClipAudioPlayer().play("src/dot.wav");
                 System.out.println("dot");
             } else if(morseChar == '-') {
+                new ClipAudioPlayer().play("src/line.wav");
                 System.out.println("line");
             }
         }

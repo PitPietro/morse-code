@@ -63,7 +63,7 @@ public class ClipAudioPlayer implements LineListener {
      *
      * @param audioFilePath Path of the audio file.
      */
-    void play(String audioFilePath) {
+    public void play(String audioFilePath) {
         File audioFile = new File(audioFilePath);
 
         try {
