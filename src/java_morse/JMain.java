@@ -15,6 +15,8 @@ public class JMain {
         scanner.useDelimiter("\n");
         JMorse m = new JMorse();
 
+        m.getSoundFromMorse();
+
         int s = 0;
         do {
             System.out.print("\n|Morse code translator|\n0) Exit\n1) Translate the text\n2) Print Morse translation\n" +

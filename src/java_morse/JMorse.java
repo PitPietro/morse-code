@@ -89,4 +89,23 @@ public class JMorse {
         }
         return msg;
     }
+
+    public void getSoundFromMorse() {
+        /*for (String[] s : morse) {
+            System.out.println(s[1]);
+        }*/
+
+        String m = morse[10][1];
+        System.out.println(m);
+
+        for (int i = 0; i < m.length(); ++i) {
+            System.out.println(m.charAt(i));
+            char morseChar = m.charAt(i);
+            if(morseChar == '.') {
+                System.out.println("dot");
+            } else if(morseChar == '-') {
+                System.out.println("line");
+            }
+        }
+    }
 }
