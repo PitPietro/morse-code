@@ -1,5 +1,15 @@
 # Morse code - *Beta version*
-Morse code implemented in Java and Kotlin whit additional demos about the library used in the project. 
+Morse code implemented in Java and Kotlin whit additional demos about the library used in the project.
+
+## Table of Contents
+
+- [What is Morse code](#what-is-morse-code)
+- [How the project works](#how-the-project-works)
+- [Used library](#used-library)
+- [Prerequisites](#prerequisites)
+- [Installing](#installing)
+- [Versioning](#versioning)
+- [Author](#author)
 
 ## What is Morse code
 
@@ -28,29 +38,23 @@ to deal with upper case or lower case letters, *fillText(String c)*'s  first ste
 saving its value in <code>plaintext</code>.<br>The method that prints the Morse code is *printMorse()*, which calls
 *getMorseFromChar(String c)* foreach letter of <code>plaintext</code>. *getMorseFromChar(String c)* check if the letter
 is equal to any **String** of the <code>morse</code> 1st row. In the affirmative, returns the corresponding String of the
-2nd row.
+2nd row and passes it as parameter to *getSoundFromMorse(String morseString)*. This method check if each character of the
+string is a *line* or a *dot*, then play the right audio file. The audio files are in the *.wav* format, they are played
+using <code>ClipAudioPlayer</code> class. It uses the <code>javax.sound.sampled.*</code> library as explained in
+... session.
 
-### Prerequisites
+## Used library
 
-I suggest you to use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
+## Prerequisites
+I suggest you to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
 
-### Installing
+## Installing
 To install this project just type in the terminal.<br>
 <code>git clone https://github.com/PitPietro/morse-code.git</code>
 
-
 ## Versioning
-
 For the versions available, see the [tags on this repository](https://github.com/PitPietro/morse-code/tags). 
 
 ## Author
-
-* **Pietro Poluzzi** - *Full work* - [PitPietro](https://github.com/PitPietro)
-
-See also the list of [contributors](https://github.com/PitPietro/morse-code/contributors) who participated in this project.
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+**Pietro Poluzzi** - *Full work* - [PitPietro](https://github.com/PitPietro)
+<br>See also the list of [contributors](https://github.com/PitPietro/morse-code/contributors) who participated in this project.

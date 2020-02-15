@@ -97,8 +97,8 @@ public class JMorse {
     }
 
     /**
-     * Takes as parameter a morse string from the multidimensional array. Foreach character of the string, check
-     * if it is a line or a dot and play the right audio file.
+     * Takes as parameter a morse string from the second row of the multidimensional array.
+     * Foreach character of the string, check if it is a line or a dot and play the right audio file.
      * @param morseString morse string
      */
     private void getSoundFromMorse(String morseString) {
