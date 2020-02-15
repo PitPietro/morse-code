@@ -96,23 +96,18 @@ public class JMorse {
         return msg;
     }
 
+    /**
+     * Takes as parameter a morse string from the multidimensional array. Foreach character of the string, check
+     * if it is a line or a dot and play the right audio file.
+     * @param morseString morse string
+     */
     private void getSoundFromMorse(String morseString) {
-        /*for (String[] s : morse) {
-            System.out.println(s[1]);
-        }*/
-
-        String m = morseString;
-        // System.out.println(m);
-
-        for (int i = 0; i < m.length(); ++i) {
-            // System.out.println(m.charAt(i));
-            char morseChar = m.charAt(i);
+        for (int i = 0; i < morseString.length(); ++i) {
+            char morseChar = morseString.charAt(i);
             if(morseChar == '.') {
                 new ClipAudioPlayer().play("src/dot.wav");
-                // System.out.println("dot");
             } else if(morseChar == '-') {
                 new ClipAudioPlayer().play("src/line.wav");
-                // System.out.println("line");
             }
         }
     }
