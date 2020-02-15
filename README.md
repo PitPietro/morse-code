@@ -41,7 +41,7 @@ is equal to any **String** of the <code>morse</code> 1st row. In the affirmative
 2nd row and passes it as parameter to *getSoundFromMorse(String morseString)*. This method check if each character of the
 string is a *line* or a *dot*, then play the right audio file. The audio files are in the *.wav* format, they are played
 using <code>ClipAudioPlayer</code> class. It uses the <code>javax.sound.sampled.*</code> library as explained in
-... session.
+[Used library](#used-library) session.
 
 ## Used library
 
