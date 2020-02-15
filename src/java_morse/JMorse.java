@@ -72,7 +72,7 @@ public class JMorse {
      */
     public void printMorse() {
         for (String s : plaintext) {
-            System.out.print(getMorseFromChar(s) + " ");
+            System.out.print(getMorseFromChar(s) + "\t");
             if(s.equals(" ")) {
                 System.out.print("\n");
             }

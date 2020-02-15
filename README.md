@@ -22,8 +22,14 @@ C | -.-.
 So the elements will be accessed like below:<br>
 <code>morse[0][0] = A</code><br><code>morse[0][1] = .-</code><br><code>morse[1][0] = B</code><br>
 <code>morse[1][1] = -...</code><br><br>The user input is stored into <code>plaintext</code>, an **ArrayList** of
-**String**. **ArrayList** is used instead of **String** because *getMorseFromChar* needs to extrapolate each letter
-into a String and compare it with <code>morse</code>'s 1st row strings.
+**String**. **ArrayList** is used instead of **String** because the <code>JMorse</code> method *getMorseFromChar(String c)*
+needs to extrapolate each letter into a String and compare it with <code>morse</code>'s 1st row strings. To avoid having
+to deal with upper case or lower case letters, *fillText(String c)*'s  first step is to make the user input uppercase before
+saving its value in <code>plaintext</code>.<br>The method that prints the Morse code is *printMorse()*, which calls
+*getMorseFromChar(String c)* foreach letter of <code>plaintext</code>. *getMorseFromChar(String c)* check if the letter
+is equal to any **String** of the <code>morse</code> 1st row. In the affirmative, returns the corresponding String of the
+2nd row.
+
 ### Prerequisites
 
 I suggest you to use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
