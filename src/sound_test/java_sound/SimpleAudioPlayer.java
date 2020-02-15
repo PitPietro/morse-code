@@ -1,16 +1,9 @@
 package sound_test.java_sound;
 
-// Java program to play an Audio
-// file using Clip Object
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  * Java inbuilt libraries support only AIFC, AIFF, AU, SND and WAVE formats. There are 2 different interfaces which
@@ -23,24 +16,23 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * 5- Stop
  * 6- Jump to a specific position of playback.
  */
-public class SimpleAudioPlayer
-{
+public class SimpleAudioPlayer {
 
-    // to store current position
-    Long currentFrame;
-    Clip clip;
-
-    // current status of clip
-    String status;
-
-    AudioInputStream audioInputStream;
     static String filePath;
+    Long currentFrame; // store current position
+    Clip clip;
+    String status; // current status of clip
+    AudioInputStream audioInputStream;
 
-    // constructor to initialize streams and clip
+    /**
+     * constructor to initialize streams and clip
+     * @throws UnsupportedAudioFileException exception
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     */
     public SimpleAudioPlayer()
             throws UnsupportedAudioFileException,
-            IOException, LineUnavailableException
-    {
+            IOException, LineUnavailableException {
         // create AudioInputStream object
         audioInputStream =
                 AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
@@ -54,19 +46,16 @@ public class SimpleAudioPlayer
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
-    public static void main(String[] args)
-    {
-        try
-        {
-            filePath = "src/Dosed.aiff";
+    public static void main(String[] args) {
+        try {
+            filePath = "src/audio_files/Dosed.wav";
             SimpleAudioPlayer audioPlayer =
                     new SimpleAudioPlayer();
 
             audioPlayer.play();
             Scanner sc = new Scanner(System.in);
 
-            while (true)
-            {
+            while (true) {
                 System.out.println("1. pause");
                 System.out.println("2. resume");
                 System.out.println("3. restart");
@@ -78,23 +67,23 @@ public class SimpleAudioPlayer
                     break;
             }
             sc.close();
-        }
-
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println("Error with playing sound.");
             ex.printStackTrace();
 
         }
     }
 
-    // Work as the user enters his choice
-
+    /**
+     * Work as the user enters his choice
+     * @param c user choice
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     * @throws UnsupportedAudioFileException exception
+     */
     private void gotoChoice(int c)
-            throws IOException, LineUnavailableException, UnsupportedAudioFileException
-    {
-        switch (c)
-        {
+            throws IOException, LineUnavailableException, UnsupportedAudioFileException {
+        switch (c) {
             case 1:
                 pause();
                 break;
@@ -114,25 +103,24 @@ public class SimpleAudioPlayer
                 long c1 = sc.nextLong();
                 jump(c1);
                 break;
-
         }
-
     }
 
-    // Method to play the audio
-    public void play()
-    {
+    /**
+     * Play the audio
+     */
+    public void play() {
         //start the clip
         clip.start();
 
         status = "play";
     }
 
-    // Method to pause the audio
-    public void pause()
-    {
-        if (status.equals("paused"))
-        {
+    /**
+     * Pause the audio
+     */
+    public void pause() {
+        if (status.equals("paused")) {
             System.out.println("audio is already paused");
             return;
         }
@@ -142,13 +130,16 @@ public class SimpleAudioPlayer
         status = "paused";
     }
 
-    // Method to resume the audio
+    /**
+     * Resume the audio
+     * @throws UnsupportedAudioFileException exception
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     */
     public void resumeAudio() throws UnsupportedAudioFileException,
-            IOException, LineUnavailableException
-    {
-        if (status.equals("play"))
-        {
-            System.out.println("Audio is already "+
+            IOException, LineUnavailableException {
+        if (status.equals("play")) {
+            System.out.println("Audio is already " +
                     "being played");
             return;
         }
@@ -158,10 +149,14 @@ public class SimpleAudioPlayer
         this.play();
     }
 
-    // Method to restart the audio
+    /**
+     * Restart the audio
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     * @throws UnsupportedAudioFileException exception
+     */
     public void restart() throws IOException, LineUnavailableException,
-            UnsupportedAudioFileException
-    {
+            UnsupportedAudioFileException {
         clip.stop();
         clip.close();
         resetAudioStream();
@@ -170,21 +165,29 @@ public class SimpleAudioPlayer
         this.play();
     }
 
-    // Method to stop the audio
+    /**
+     * Stop the audio
+     * @throws UnsupportedAudioFileException exception
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     */
     public void stop() throws UnsupportedAudioFileException,
-            IOException, LineUnavailableException
-    {
+            IOException, LineUnavailableException {
         currentFrame = 0L;
         clip.stop();
         clip.close();
     }
 
-    // Method to jump over a specific part
+    /**
+     * Jump over a specific part
+     * @param c time
+     * @throws UnsupportedAudioFileException exception
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     */
     public void jump(long c) throws UnsupportedAudioFileException, IOException,
-            LineUnavailableException
-    {
-        if (c > 0 && c < clip.getMicrosecondLength())
-        {
+            LineUnavailableException {
+        if (c > 0 && c < clip.getMicrosecondLength()) {
             clip.stop();
             clip.close();
             resetAudioStream();
@@ -194,14 +197,17 @@ public class SimpleAudioPlayer
         }
     }
 
-    // Method to reset audio stream
+    /**
+     * Reset audio stream
+     * @throws UnsupportedAudioFileException exception
+     * @throws IOException exception
+     * @throws LineUnavailableException exception
+     */
     public void resetAudioStream() throws UnsupportedAudioFileException, IOException,
-            LineUnavailableException
-    {
+            LineUnavailableException {
         audioInputStream = AudioSystem.getAudioInputStream(
                 new File(filePath).getAbsoluteFile());
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
-
 }

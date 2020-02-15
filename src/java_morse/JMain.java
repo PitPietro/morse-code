@@ -22,19 +22,21 @@ public class JMain {
             s = scanner.nextInt();
 
             switch (s) {
-                case 0: System.out.println("Good bye!");
-                break;
+                case 0:
+                    System.out.println("Good bye!");
+                    break;
                 case 1: {
                     System.out.print("Input the message: ");
                     String text = scanner.next();
                     m.fillText(text);
                 }
                 break;
-                case 2: m.printMorse();
+                case 2:
+                    m.printMorse();
                     break;
                 default:
                     System.out.println("I can't do nothing whit this number");
             }
-        } while(s != 0);
+        } while (s != 0);
     }
 }

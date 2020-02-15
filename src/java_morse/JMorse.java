@@ -57,11 +57,12 @@ public class JMorse {
      * Fills the 'plaintext' variable whit the user's input.
      * It makes all the letters uppercase so that they can be
      * compared with the once stored in the multidimensional array
+     *
      * @param s user input
      */
     public void fillText(String s) {
         s = s.toUpperCase();
-        for(int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             plaintext.add(String.valueOf(s.charAt(i)));
         }
     }
@@ -73,7 +74,7 @@ public class JMorse {
     public void printMorse() {
         for (String s : plaintext) {
             System.out.print(getMorseFromChar(s) + "\t");
-            if(s.equals(" ")) {
+            if (s.equals(" ")) {
                 System.out.print("\n");
             }
         }
@@ -81,6 +82,7 @@ public class JMorse {
 
     /**
      * Takes as parameter a letter or a number and returns the given Morse element
+     *
      * @param c a letter or a number that can be translated by the Morse alphabet
      * @return Morse char
      */
@@ -99,15 +101,16 @@ public class JMorse {
     /**
      * Takes as parameter a morse string from the second row of the multidimensional array.
      * Foreach character of the string, check if it is a line or a dot and play the right audio file.
+     *
      * @param morseString morse string
      */
     private void getSoundFromMorse(String morseString) {
         for (int i = 0; i < morseString.length(); ++i) {
             char morseChar = morseString.charAt(i);
-            if(morseChar == '.') {
-                new ClipAudioPlayer().play("src/dot.wav");
-            } else if(morseChar == '-') {
-                new ClipAudioPlayer().play("src/line.wav");
+            if (morseChar == '.') {
+                new ClipAudioPlayer().play("src/audio_files/dot.wav");
+            } else if (morseChar == '-') {
+                new ClipAudioPlayer().play("src/audio_files/line.wav");
             }
         }
     }
