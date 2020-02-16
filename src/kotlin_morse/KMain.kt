@@ -1,6 +1,5 @@
 package kotlin_morse
 
-import java_morse.JMorse
 import java.util.*
 
 /**
