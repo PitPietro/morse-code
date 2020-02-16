@@ -1,4 +1,4 @@
-# Morse code - *Beta version*
+# Morse code
 Morse code implemented in Java and Kotlin whit additional demos about the library used in the project.
 
 ## Table of Contents
