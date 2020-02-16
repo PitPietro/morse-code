@@ -69,7 +69,9 @@ public class JMorse {
 
     /**
      * The foreach loop calls 'getMorseFromChar' for each character of the
-     * 'plaintext' ArrayList printing the Morse code
+     * 'plaintext' ArrayList printing the Morse code. After the loop, clear
+     * the ArrayList: if the user input another message, it will be placed
+     * after the once already in.
      */
     public void printMorse() {
         for (String s : plaintext) {
@@ -78,6 +80,7 @@ public class JMorse {
                 System.out.print("\n");
             }
         }
+        plaintext.clear();
     }
 
     /**
