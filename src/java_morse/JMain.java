@@ -17,24 +17,26 @@ public class JMain {
 
         int s = 0;
         do {
-            System.out.print("\n|Morse code translator|\n0) Exit\n1) Translate the text\n2) Print Morse translation\n" +
+            System.out.print("\n\n|Morse code translator|\n0) Exit\n1) Translate the text\n2) Print Morse translation\n" +
                     "Number: ");
             s = scanner.nextInt();
 
             switch (s) {
-                case 0: System.out.println("Good bye!");
-                break;
+                case 0:
+                    System.out.println("Good bye!");
+                    break;
                 case 1: {
                     System.out.print("Input the message: ");
                     String text = scanner.next();
                     m.fillText(text);
                 }
                 break;
-                case 2: m.printMorse();
+                case 2:
+                    m.printMorse();
                     break;
                 default:
                     System.out.println("I can't do nothing whit this number");
             }
-        } while(s != 0);
+        } while (s != 0);
     }
 }
