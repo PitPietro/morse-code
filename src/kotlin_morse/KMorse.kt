@@ -60,8 +60,8 @@ class KMorse {
     fun fillText(s: String) {
         var s = s
         s = s.toUpperCase()
-        for (i in 0 until s.length) {
-            plaintext!!.add(s[i].toString())
+        for (element in s) {
+            plaintext!!.add(element.toString())
         }
     }
 

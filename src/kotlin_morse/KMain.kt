@@ -14,7 +14,7 @@ object KMain {
     fun main(args: Array<String>) {
         val scanner = Scanner(System.`in`)
         scanner.useDelimiter("\n")
-        val m = JMorse()
+        val m = KMorse()
         var s = 0
         do {
             print(
