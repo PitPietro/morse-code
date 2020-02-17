@@ -1,0 +1,18 @@
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+# Gradle and Maven with auto-import
+ *.iml
+ *.ipr
+
+# CMake
+cmake-build-*/
+
+# Mongo Explorer plugin
+.idea/**/mongoSettings.xml
+
+# File-based project format
+*.iws
+
+# IntelliJ
+out/
+.idea/
+Morse-code.iml
