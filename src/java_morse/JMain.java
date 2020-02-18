@@ -29,8 +29,8 @@ public class JMain {
                     System.out.print("Input the message: ");
                     String text = scanner.next();
                     m.fillText(text);
+                    break;
                 }
-                break;
                 case 2:
                     m.printMorse();
                     break;

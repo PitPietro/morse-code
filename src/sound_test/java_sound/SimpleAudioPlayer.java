@@ -48,7 +48,7 @@ public class SimpleAudioPlayer {
 
     public static void main(String[] args) {
         try {
-            filePath = "src/audio_files/Dosed.wav";
+            filePath = "src/audio_files/dot.wav";
             SimpleAudioPlayer audioPlayer =
                     new SimpleAudioPlayer();
 

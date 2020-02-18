@@ -54,7 +54,7 @@ public class SourceDataLineAudioPlayer {
     private static final int BUFFER_SIZE = 4096;
 
     public static void main(String[] args) {
-        String audioFilePath = "src/Dosed.wav";
+        String audioFilePath = "src/audio_files/dot.wav";
         SourceDataLineAudioPlayer player = new SourceDataLineAudioPlayer();
         player.play(audioFilePath);
     }
