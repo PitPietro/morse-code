@@ -1,4 +1,4 @@
-package sound_test.clip;
+package tests.sound_test.clip;
 
 public class ClipMain {
     public static void main(String[] args) {

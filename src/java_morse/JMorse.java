@@ -1,6 +1,6 @@
 package java_morse;
 
-import sound_test.clip.ClipAudioPlayer;
+import tests.sound_test.clip.ClipAudioPlayer;
 
 import java.util.ArrayList;
 
@@ -44,6 +44,10 @@ public class JMorse {
             {"9", "----."},
     };
 
+    public final String DOT_PATH = "src/audio_files/dot.wav";
+    public final String LINE_PATH = "src/audio_files/line.wav";
+    public final String PAUSE_PATH = "src/audio_files/pause.wav";
+
     /**
      * It stores the message the user want to translate
      */
@@ -77,6 +81,7 @@ public class JMorse {
         for (String s : plaintext) {
             System.out.print(getMorseFromChar(s) + "\t");
             if (s.equals(" ")) {
+                new ClipAudioPlayer().play(PAUSE_PATH);
                 System.out.print("\n");
             }
         }
@@ -111,9 +116,9 @@ public class JMorse {
         for (int i = 0; i < morseString.length(); ++i) {
             char morseChar = morseString.charAt(i);
             if (morseChar == '.') {
-                new ClipAudioPlayer().play("src/audio_files/dot.wav");
+                new ClipAudioPlayer().play(DOT_PATH);
             } else if (morseChar == '-') {
-                new ClipAudioPlayer().play("src/audio_files/line.wav");
+                new ClipAudioPlayer().play(LINE_PATH);
             }
         }
     }

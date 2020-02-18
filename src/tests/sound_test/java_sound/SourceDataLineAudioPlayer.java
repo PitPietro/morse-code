@@ -1,4 +1,4 @@
-package sound_test.java_sound;
+package tests.sound_test.java_sound;
 
 import javax.sound.sampled.*;
 import java.io.File;
