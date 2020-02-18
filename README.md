@@ -6,6 +6,7 @@ Morse code implemented in Java and Kotlin whit additional demos about the librar
 - [What is Morse code](#what-is-morse-code)
 - [How the project works](#how-the-project-works)
 - [Used library](#used-library)
+- [Discussion](#discussion-about-this-project)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
 - [Versioning](#versioning)
@@ -44,6 +45,10 @@ using <code>ClipAudioPlayer</code> class. It uses the <code>javax.sound.sampled.
 [Used library](#used-library) session.
 
 ## Used library
+TODO
+
+## Discussion about this project
+I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).<br> The comments are very interesting, you may found a lot of inspiration.
 
 ## Prerequisites
 I suggest you to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
