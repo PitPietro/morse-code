@@ -1,5 +1,7 @@
 package tests.key_event_test;
 
+import javafx.util.Pair;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -7,6 +9,7 @@ import java.awt.event.KeyListener;
 
 import static java.awt.event.KeyEvent.getExtendedKeyCodeForChar;
 import static java.awt.event.KeyEvent.getKeyText;
+import static tests.pair.PairMorseTest.getMorsePair;
 
 public class GUIKeyEvent extends JFrame implements KeyListener {
     JTextField textField;
@@ -14,6 +17,7 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
     JPanel panelEast;
     JPanel panelWest;
     JPanel labelNorth;
+    JPanel labelSouth;
 
     private JLabel labelKeyTypedChar = new JLabel();
     private JLabel labelKeyPressedChar = new JLabel();
@@ -28,6 +32,8 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
     private JLabel labelExtendedKeyCode = new JLabel();
     private JLabel labelExtendedKeyCodeforChar = new JLabel();
 
+    private JLabel labelMorseString = new JLabel();
+
     public GUIKeyEvent() {
         setTitle("Java Key Event");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,12 +44,15 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         panelEast = new JPanel();
         panelWest = new JPanel();
         labelNorth = new JPanel();
+        labelSouth = new JPanel();
 
         panelEast.setLayout(new GridLayout(4, 1));
         panelWest.setLayout(new GridLayout(6, 1));
         labelNorth.setLayout(new GridLayout(2, 1));
+        labelSouth.setLayout(new GridLayout(2, 1));
 
         add(labelNorth, BorderLayout.NORTH);
+        add(labelSouth, BorderLayout.SOUTH);
         labelNorth.add(labelPrompt);
         labelNorth.add(textField);
 
@@ -61,6 +70,8 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         panelWest.add(labelKeyPressedText);
         panelWest.add(labelExtendedKeyCode);
         panelWest.add(labelExtendedKeyCodeforChar);
+
+        labelSouth.add(labelMorseString);
 
         addKeyListener(this);
         textField.addKeyListener(this);
@@ -108,6 +119,9 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         labelKeyPressedLocation.setText("|keyPressed| getKeyLocation: " + keyLocation);
         labelExtendedKeyCode.setText("|keyPressed| getExtendedKeyCode: " + extendedKeyCode);
         labelExtendedKeyCodeforChar.setText("|keyPressed| getExtendedKeyCodeForChar: " + extendedKeyCodeForChar);
+
+        Pair<Integer, String> pair = getMorsePair(keyCode);
+        labelMorseString.setText(pair.getValue());
     }
 
     public void keyReleased(KeyEvent keyEvent) {

@@ -5,7 +5,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class PairMorseTest {
+public class PairMorseTest {
     public final static ArrayList<Pair<Integer, String>> pairArrayList =
             new ArrayList<>(Arrays.asList(
                     new Pair<>(65, ".-"),
@@ -38,7 +38,7 @@ class PairMorseTest {
         return ans;
     }
 
-    static Pair<Integer, String> getMorsePair(Integer number) {
+    public static Pair<Integer, String> getMorsePair(Integer number) {
         for (Pair<Integer, String> integerStringPair : pairArrayList) {
             if (integerStringPair.getKey().equals(number)) {
                 return integerStringPair;
