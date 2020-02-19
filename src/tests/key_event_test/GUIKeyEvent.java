@@ -9,9 +9,12 @@ import java.awt.event.KeyListener;
  * Made following http://ecomputernotes.com/java/swing/keyevent
  */
 public class GUIKeyEvent extends JFrame implements KeyListener {
-    private JLabel labelKeyTyped = new JLabel();
-    private JLabel labelKeyPressed = new JLabel();
-    private JLabel labelKeyReleased = new JLabel();
+    private JLabel labelKeyTypedChar = new JLabel();
+    private JLabel labelKeyPressedChar = new JLabel();
+    private JLabel labelKeyReleasedChar = new JLabel();
+    private JLabel labelKeyTypedCode = new JLabel();
+    private JLabel labelKeyPressedCode = new JLabel();
+    private JLabel labelKeyReleasedCode = new JLabel();
     JTextField textField;
     JLabel labelPrompt;
     JPanel labelPanel;
@@ -26,7 +29,7 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         labelPrompt = new JLabel("Press any keys:");
         labelPanel = new JPanel();
         labelNorth = new JPanel();
-        labelPanel.setLayout(new GridLayout(3, 1));
+        labelPanel.setLayout(new GridLayout(6, 1));
         labelNorth.setLayout(new GridLayout(2, 1));
 
         add(labelNorth, BorderLayout.NORTH);
@@ -34,9 +37,12 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         labelNorth.add(textField);
 
         add(labelPanel, BorderLayout.CENTER);
-        labelPanel.add(labelKeyTyped);
-        labelPanel.add(labelKeyPressed);
-        labelPanel.add(labelKeyReleased);
+        labelPanel.add(labelKeyTypedChar);
+        labelPanel.add(labelKeyTypedCode);
+        labelPanel.add(labelKeyPressedChar);
+        labelPanel.add(labelKeyPressedCode);
+        labelPanel.add(labelKeyReleasedChar);
+        labelPanel.add(labelKeyReleasedCode);
 
         addKeyListener(this);
         textField.addKeyListener(this);
@@ -66,18 +72,24 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         char keyChar = keyEvent.getKeyChar();
         int keyCode = keyEvent.getKeyCode();
 
-        labelKeyTyped.setText("|keyTyped| getKeyChar: " + keyChar);
-        labelKeyTyped.setText("|keyTyped| getKeyCode: " + keyCode);
+        labelKeyTypedChar.setText("|keyTyped| getKeyChar: " + keyChar);
+        labelKeyTypedCode.setText("|keyTyped| getKeyCode: " + keyCode);
     }
 
-    public void keyPressed(KeyEvent Evnt) {
-        char keyChar = Evnt.getKeyChar();
-        labelKeyPressed.setText("|keyPressed| getKeyChar: " + keyChar);
+    public void keyPressed(KeyEvent keyEvent) {
+        char keyChar = keyEvent.getKeyChar();
+        int keyCode = keyEvent.getKeyCode();
+
+        labelKeyPressedChar.setText("|keyPressed| getKeyChar: " + keyChar);
+        labelKeyPressedCode.setText("|keyPressed| getKeyCode: " + keyCode);
     }
 
-    public void keyReleased(KeyEvent Evnt) {
-        char keyChar = Evnt.getKeyChar();
-        labelKeyReleased.setText("|keyReleased| getKeyChar: " + keyChar);
+    public void keyReleased(KeyEvent keyEvent) {
+        char keyChar = keyEvent.getKeyChar();
+        int keyCode = keyEvent.getKeyCode();
+
+        labelKeyReleasedChar.setText("|keyReleased| getKeyChar: " + keyChar);
+        labelKeyReleasedCode.setText("|keyReleased| getKeyCode: " + keyCode);
     }
 }
 
