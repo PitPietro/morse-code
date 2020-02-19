@@ -5,13 +5,21 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 class PairMorseTest {
-    public ArrayList<Pair<Integer, String>> pairArrayList;
+    public final static ArrayList<Pair<Integer, String>> pairArrayList = new ArrayList<>();
 
     public PairMorseTest() {
-        this.pairArrayList = new ArrayList<>();
+    }
+
+    private static void fillPairedArrayList() {
+        pairArrayList.add(new Pair<>(65, ".-"));
+        pairArrayList.add(new Pair<>(66, "-..."));
+        pairArrayList.add(new Pair<>(67, "-.-."));
+        pairArrayList.add(new Pair<>(68, "-.."));
+        pairArrayList.add(new Pair<>(69, "."));
     }
 
     public static Pair<Integer, String> getMaximum(ArrayList<Pair<Integer, String>> list) {
+
         // Assign minimum value initially
         int max = Integer.MIN_VALUE;
 
@@ -35,12 +43,11 @@ class PairMorseTest {
 
     // Driver method to test above method
     public static void main(String[] args) {
-
-        PairMorseTest pairObject = new PairMorseTest();
+        fillPairedArrayList();
 
         // get the Pair which has maximum value
-        Pair<Integer, String> ans = getMaximum(pairObject.pairArrayList);
+        Pair<Integer, String> ans = getMaximum(pairArrayList);
 
-        System.out.println(ans.getKey() + " is top scorer with score of " + ans.getValue());
+        System.out.println("key = " + ans.getKey() + "\tvalue = " + ans.getValue());
     }
 }
