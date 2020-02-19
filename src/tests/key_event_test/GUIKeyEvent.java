@@ -5,20 +5,21 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-/**
- * Made following http://ecomputernotes.com/java/swing/keyevent
- */
+import static java.awt.event.KeyEvent.getKeyText;
+
 public class GUIKeyEvent extends JFrame implements KeyListener {
+    JTextField textField;
+    JLabel labelPrompt;
+    JPanel labelPanel;
+    JPanel labelNorth;
     private JLabel labelKeyTypedChar = new JLabel();
     private JLabel labelKeyPressedChar = new JLabel();
     private JLabel labelKeyReleasedChar = new JLabel();
     private JLabel labelKeyTypedCode = new JLabel();
     private JLabel labelKeyPressedCode = new JLabel();
     private JLabel labelKeyReleasedCode = new JLabel();
-    JTextField textField;
-    JLabel labelPrompt;
-    JPanel labelPanel;
-    JPanel labelNorth;
+    private JLabel labelKeyPressedText = new JLabel();
+    private JLabel labelKeyPressedLocation = new JLabel();
 
     public GUIKeyEvent() {
         setTitle("Java Example of Key Event");
@@ -29,7 +30,7 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
         labelPrompt = new JLabel("Press any keys:");
         labelPanel = new JPanel();
         labelNorth = new JPanel();
-        labelPanel.setLayout(new GridLayout(6, 1));
+        labelPanel.setLayout(new GridLayout(4, 2));
         labelNorth.setLayout(new GridLayout(2, 1));
 
         add(labelNorth, BorderLayout.NORTH);
@@ -38,11 +39,16 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
 
         add(labelPanel, BorderLayout.CENTER);
         labelPanel.add(labelKeyTypedChar);
-        labelPanel.add(labelKeyTypedCode);
         labelPanel.add(labelKeyPressedChar);
+
+        labelPanel.add(labelKeyTypedCode);
         labelPanel.add(labelKeyPressedCode);
+
         labelPanel.add(labelKeyReleasedChar);
+        labelPanel.add(labelKeyPressedLocation);
+
         labelPanel.add(labelKeyReleasedCode);
+        labelPanel.add(labelKeyPressedText);
 
         addKeyListener(this);
         textField.addKeyListener(this);
@@ -79,9 +85,13 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
     public void keyPressed(KeyEvent keyEvent) {
         char keyChar = keyEvent.getKeyChar();
         int keyCode = keyEvent.getKeyCode();
+        int keyLocation = keyEvent.getKeyLocation();
+        String keyText = getKeyText(keyCode);
 
         labelKeyPressedChar.setText("|keyPressed| getKeyChar: " + keyChar);
         labelKeyPressedCode.setText("|keyPressed| getKeyCode: " + keyCode);
+        labelKeyPressedText.setText("|keyPressed| getKeyText: " + keyText);
+        labelKeyPressedLocation.setText("|keyPressed| getKeyLocation: " + keyLocation);
     }
 
     public void keyReleased(KeyEvent keyEvent) {
