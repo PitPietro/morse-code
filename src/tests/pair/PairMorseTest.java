@@ -3,20 +3,17 @@ package tests.pair;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class PairMorseTest {
-    public final static ArrayList<Pair<Integer, String>> pairArrayList = new ArrayList<>();
-
-    public PairMorseTest() {
-    }
-
-    private static void fillPairedArrayList() {
-        pairArrayList.add(new Pair<>(65, ".-"));
-        pairArrayList.add(new Pair<>(66, "-..."));
-        pairArrayList.add(new Pair<>(67, "-.-."));
-        pairArrayList.add(new Pair<>(68, "-.."));
-        pairArrayList.add(new Pair<>(69, "."));
-    }
+    public final static ArrayList<Pair<Integer, String>> pairArrayList =
+            new ArrayList<>(Arrays.asList(
+                    new Pair<>(65, ".-"),
+                    new Pair<>(66, "-..."),
+                    new Pair<>(67, "-.-."),
+                    new Pair<>(68, "-.."),
+                    new Pair<>(69, ".")
+                    ));
 
     public static Pair<Integer, String> getMaximum(ArrayList<Pair<Integer, String>> list) {
 
@@ -41,13 +38,25 @@ class PairMorseTest {
         return ans;
     }
 
+    static Pair<Integer, String> getMorsePair(Integer number) {
+        for (Pair<Integer, String> integerStringPair : pairArrayList) {
+            if (integerStringPair.getKey().equals(number)) {
+                return integerStringPair;
+            }
+        }
+
+        return new Pair<>(0, "");
+    }
+
     // Driver method to test above method
     public static void main(String[] args) {
-        fillPairedArrayList();
+        Pair<Integer, String> answer = getMaximum(pairArrayList);
+        System.out.println("key = " + answer.getKey() + "\tvalue = " + answer.getValue());
 
-        // get the Pair which has maximum value
-        Pair<Integer, String> ans = getMaximum(pairArrayList);
+        for (int i = 65; i < 70; ++i) {
+            answer = getMorsePair(i);
+            System.out.println("key = " + answer.getKey() + "\tvalue = " + answer.getValue());
+        }
 
-        System.out.println("key = " + ans.getKey() + "\tvalue = " + ans.getValue());
     }
 }
