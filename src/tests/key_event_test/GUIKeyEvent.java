@@ -14,6 +14,7 @@ public class GUIKeyEvent extends JFrame implements KeyListener {
     JPanel panelEast;
     JPanel panelWest;
     JPanel labelNorth;
+
     private JLabel labelKeyTypedChar = new JLabel();
     private JLabel labelKeyPressedChar = new JLabel();
     private JLabel labelKeyReleasedChar = new JLabel();
