@@ -3,7 +3,6 @@ package MVC;
 import javafx.util.Pair;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -19,6 +18,8 @@ public class MorseView extends JFrame implements KeyListener {
     private JLabel labelMorse;
     JLabel labelUserInput;
     JLabel labelFooter;
+    JLabel labelControllerUserString;
+    JLabel labelControllerMorseString;
 
     JTextField textUserInput;
 
@@ -32,13 +33,19 @@ public class MorseView extends JFrame implements KeyListener {
 
         textUserInput = new JTextField(10);
         labelUserInput = new JLabel("    Write here: ");
+
         labelMorse = new JLabel("", SwingConstants.CENTER);
-        labelMorse.setFont(new Font("Serif", Font.PLAIN, 20));
+        labelMorse.setFont(new Font("Serif", Font.PLAIN, 30));
+
+        labelControllerUserString = new JLabel();
+        labelControllerMorseString = new JLabel();
 
         panelNorth = new JPanel();
-        panelNorth.setLayout(new GridLayout(1, 2));
+        panelNorth.setLayout(new GridLayout(2, 2));
         panelNorth.add(labelUserInput);
         panelNorth.add(textUserInput);
+        panelNorth.add(labelControllerUserString);
+        panelNorth.add(labelControllerMorseString);
 
         panelCenter = new JPanel();
         panelCenter.setLayout(new GridLayout(1, 1));
@@ -72,6 +79,9 @@ public class MorseView extends JFrame implements KeyListener {
         labelMorse.setText(pairedValue);
         controller.addElementToUserString(keyText);
         controller.addElementToMorseString(pairedValue);
+
+        labelControllerUserString.setText(controller.getUserString().toString());
+        labelControllerMorseString.setText(controller.getMorseString().toString());
     }
 
     @Override
