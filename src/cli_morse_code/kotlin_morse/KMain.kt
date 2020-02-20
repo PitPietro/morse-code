@@ -1,4 +1,4 @@
-package kotlin_morse
+package cli_morse_code.kotlin_morse
 
 import java.util.*
 

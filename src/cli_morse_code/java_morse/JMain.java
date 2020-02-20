@@ -1,4 +1,4 @@
-package java_morse;
+package cli_morse_code.java_morse;
 
 import java.util.Scanner;
 
