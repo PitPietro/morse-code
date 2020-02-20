@@ -25,7 +25,6 @@ public class MorseView extends JFrame implements KeyListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-
         textUserInput = new JTextField(10);
         labelUserInput = new JLabel("    Write here: ");
         labelMorse = new JLabel("", SwingConstants.CENTER);
