@@ -9,8 +9,13 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import static MVC.MorseModel.getMorsePair;
+import static java.awt.event.KeyEvent.getKeyText;
 
+/**
+ * The Morse
+ */
 public class MorseView extends JFrame implements KeyListener {
+    private MorseController controller;
     private JLabel labelMorse;
     JLabel labelUserInput;
     JLabel labelFooter;
@@ -41,6 +46,8 @@ public class MorseView extends JFrame implements KeyListener {
 
         labelFooter = new JLabel("This programme is under a MIT licence");
 
+        controller = new MorseController();
+
         add(panelNorth, BorderLayout.NORTH);
         add(labelFooter, BorderLayout.SOUTH);
         add(panelCenter, BorderLayout.CENTER);
@@ -59,7 +66,12 @@ public class MorseView extends JFrame implements KeyListener {
     public void keyPressed(KeyEvent keyEvent) {
         int keyCode = keyEvent.getKeyCode();
         Pair<Integer, String> pair = getMorsePair(keyCode);
-        labelMorse.setText(pair.getValue());
+        String keyText = getKeyText(keyCode);
+        String pairedValue = pair.getValue();
+
+        labelMorse.setText(pairedValue);
+        controller.addElementToUserString(keyText);
+        controller.addElementToMorseString(pairedValue);
     }
 
     @Override
