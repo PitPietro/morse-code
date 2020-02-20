@@ -51,7 +51,7 @@ public class MorseView extends JFrame implements KeyListener {
         panelCenter.setLayout(new GridLayout(1, 1));
         panelCenter.add(labelMorse);
 
-        labelFooter = new JLabel("This programme is under a MIT licence");
+        labelFooter = new JLabel("This programme is under a MIT licence. Copyright (c) 2020 Pietro Poluzzi");
 
         controller = new MorseController();
 
@@ -80,7 +80,7 @@ public class MorseView extends JFrame implements KeyListener {
         controller.addElementToUserString(keyText);
         controller.addElementToMorseString(pairedValue);
 
-        labelControllerUserString.setText(controller.getUserString().toString());
+        labelControllerUserString.setText(controller.userStringToString());
         labelControllerMorseString.setText(controller.morseStringToString());
     }
 

@@ -15,7 +15,17 @@ public class MorseController {
     }
 
     public void addElementToUserString(String element) {
-        userString.add(element);
+        if (element.equals("Backspace")) {
+            userString.remove(userString.size()-1);
+            deleteElementToMorseString();
+        } else {
+            userString.add(element);
+        }
+
+    }
+
+    private void deleteElementToMorseString() {
+        morseString.remove(morseString.size()-1);
     }
 
     public void addElementToMorseString(String element) {
@@ -38,11 +48,20 @@ public class MorseController {
         this.morseString = morseString;
     }
 
+    public String userStringToString() {
+        StringBuilder msg = new StringBuilder("    ");
+        for (String morseStrings : userString) {
+            msg.append(morseStrings);
+            msg.append("  ");
+        }
+        return msg.toString();
+    }
+
     public String morseStringToString() {
         StringBuilder msg = new StringBuilder();
         for (String morseStrings : morseString) {
             msg.append(morseStrings);
-            msg.append("    ");
+            msg.append("  ");
         }
         return msg.toString();
     }
