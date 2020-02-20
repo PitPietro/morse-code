@@ -26,6 +26,8 @@ public class MorseView extends JFrame implements KeyListener {
     JPanel panelNorth;
     JPanel panelCenter;
 
+    JButton buttonSound;
+
     public MorseView() {
         setTitle("Morse GUI");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +52,9 @@ public class MorseView extends JFrame implements KeyListener {
         panelCenter = new JPanel();
         panelCenter.setLayout(new GridLayout(1, 1));
         panelCenter.add(labelMorse);
+
+        buttonSound = new JButton("Play morse");
+
 
         labelFooter = new JLabel("This programme is under a MIT licence. Copyright (c) 2020 Pietro Poluzzi");
 

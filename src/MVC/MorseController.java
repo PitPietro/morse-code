@@ -15,14 +15,25 @@ public class MorseController {
     }
 
     public boolean isElement(String element) {
-        if(element.equals("Shift") || element.equals("Ctrl")
-                || element.equals("Alt") || element.equals("Alt Graph")) {
-            return false;
-        } else if(element.equals("Backspace")) {
-            userString.remove(userString.size()-1);
-            morseString.remove(morseString.size()-1);
-            return false;
-        } else return true;
+        switch (element) {
+            case "Shift":
+            case "Ctrl":
+            case "Alt":
+            case "Alt Graph":
+                return false;
+            case "Space":
+                addElementToUserString("");
+                addElementToMorseString("");
+                return false;
+            case "Backspace":
+                if (userString.size() > 0) {
+                    userString.remove(userString.size() - 1);
+                    morseString.remove(morseString.size() - 1);
+                }
+                return false;
+            default:
+                return true;
+        }
     }
 
     public void addElementToUserString(String element) {
