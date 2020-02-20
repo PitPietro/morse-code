@@ -14,14 +14,19 @@ public class MorseController {
         morseString = new ArrayList<>();
     }
 
-    public void addElementToUserString(String element) {
-        if (element.equals("Backspace")) {
+    public boolean isElement(String element) {
+        if(element.equals("Shift") || element.equals("Ctrl")
+                || element.equals("Alt") || element.equals("Alt Graph")) {
+            return false;
+        } else if(element.equals("Backspace")) {
             userString.remove(userString.size()-1);
-            deleteElementToMorseString();
-        } else {
-            userString.add(element);
-        }
+            morseString.remove(morseString.size()-1);
+            return false;
+        } else return true;
+    }
 
+    public void addElementToUserString(String element) {
+        userString.add(element);
     }
 
     private void deleteElementToMorseString() {
@@ -62,6 +67,7 @@ public class MorseController {
         for (String morseStrings : morseString) {
             msg.append(morseStrings);
             msg.append("  ");
+            System.out.println(msg);
         }
         return msg.toString();
     }
