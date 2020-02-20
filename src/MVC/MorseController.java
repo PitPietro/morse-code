@@ -37,4 +37,13 @@ public class MorseController {
     public void setMorseString(ArrayList<String> morseString) {
         this.morseString = morseString;
     }
+
+    public String morseStringToString() {
+        StringBuilder msg = new StringBuilder();
+        for (String morseStrings : morseString) {
+            msg.append(morseStrings);
+            msg.append("    ");
+        }
+        return msg.toString();
+    }
 }

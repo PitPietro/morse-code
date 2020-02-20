@@ -81,7 +81,7 @@ public class MorseView extends JFrame implements KeyListener {
         controller.addElementToMorseString(pairedValue);
 
         labelControllerUserString.setText(controller.getUserString().toString());
-        labelControllerMorseString.setText(controller.getMorseString().toString());
+        labelControllerMorseString.setText(controller.morseStringToString());
     }
 
     @Override
