@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import static MVC.SoundModel.playSound;
+
 /**
  * Saves the user interaction whit the View and interact with the Model
  */
@@ -13,6 +15,7 @@ public class MorseController {
     public static final String DOT_PATH = "src/audio_files/dot.wav";
     public static final String LINE_PATH = "src/audio_files/line.wav";
     public static final String PAUSE_PATH = "src/audio_files/pause.wav";
+    private static final String SHORT_PAUSE_PATH = "src/audio_files/short-pause.wav";
 
     private ArrayList<String> userString;
     private ArrayList<String> morseString;
@@ -97,14 +100,19 @@ public class MorseController {
             for (int j = 0; j < mString.length(); ++j) {
                 char mChar = mString.charAt(j);
                 switch (mChar) {
-                    case '.':
-                        System.out.println("Play dot");
-                        break;
-                    case '-':
-                        System.out.println("Play line");
-                        break;
+                    case '.': {
+                        playSound(DOT_PATH);
+                        // make a short pause between each letter
+                        playSound(SHORT_PAUSE_PATH);
+                    }
+                    break;
+                    case '-': {
+                        playSound(LINE_PATH);
+                        playSound(SHORT_PAUSE_PATH);
+                    }
+                    break;
                     case ' ':
-                        System.out.println("Play space");
+                        playSound(PAUSE_PATH);
                         break;
                     default:
                         System.out.println("Play NOTHING");
