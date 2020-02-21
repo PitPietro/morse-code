@@ -37,18 +37,21 @@ public class ClipAudioPlayerModel {
         filePath = DOT_PATH;
         ClipAudioPlayerModel obj = new ClipAudioPlayerModel();
         obj.play();
-        long l;
+        /*long l = 0;
         do {
-            l = obj.clip.getMicrosecondLength();
+            l++;
+            System.out.println(l);
             obj.getClipLength();
-        } while(l < obj.clip.getMicrosecondLength());
+        } while(l < obj.clip.getMicrosecondLength());*/
     }
 
     // Method to play the audio
-    public void play() {
+    public void play() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         //start the clip
         clip.start();
         status = "play";
+        System.out.println("Play audio");
+        stop();
     }
 
     // Method to pause the audio
@@ -95,7 +98,9 @@ public class ClipAudioPlayerModel {
             IOException, LineUnavailableException {
         currentFrame = 0L;
         clip.stop();
+        System.out.println("STOP audio");
         clip.close();
+        System.out.println("CLOSE audio");
     }
 
     // Method to jump over a specific part
