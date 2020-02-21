@@ -49,26 +49,33 @@ using <code>ClipAudioPlayer</code> class. It uses the <code>javax.sound.sampled.
 
 ### GUI whit MVC
 After getting a lot of suggestion from the Reddit community, the project has been provided whit a Graphic User Interface
-that implements the <i>ModelViewControl</i> pattern. The list below show its structure:<br>
+that implements the <i>ModelViewController</i> pattern. The list below show its structure:<br>
 1. Model
    - MorseModel
    - SoundModel
 2. View
    - MorseView
-3. Control
+3. Controller
    - MorseController
    
 Let's dive deep into the working of the GUI.<code>MorseModel</code> provide an ArrayList of Pair which couples all
 the keyboard's <code>keyCode</code> whit the corresponding **Morse** code. <code>keyCode</code> is handled by the
-<code>KeyListener</code> interface implemented by <code>MorseView</code> and its an integer value associated with the
+<code>KeyListener</code> interface implemented by <code>MorseView</code> and linked to a JTextField by
+<code>addKeyListener()</code> method.<code>keyCode</code> is an integer value associated with the
 keyboard's key: all the keys have a different <code>keyCode</code>.<br><code>MorseController</code> has a couple of
 <i>private</i> ArrayList that are set as text for a couple of label in <code>MorseView</code>. Every time a key is
 pressed in the view, the model returns the **Pair** that stores the <code>keyCode</code> whit the corresponding Morse code,
 then the controller stores the alphabetic value and the Morse value in the lists. The insertion is surrounded by
 <code>isElement</code> method: it ignores keys like **Shift**, **Ctrl** and remove a element from the lists if the
-pressed key is **Backspace**.
+pressed key is **Backspace**.<br><code>MorseView</code> has a couple of buttons which are provided with an **ActionListener**.
+The *Open source!* button points to this **GitHub** repository by calling the <code>openProjectURL()</code> method from
+the controller. The *Play morse* button calls the <code>playMorse()</code> method, which calls the *static* method
+<code>playSound(String soundPath)</code> from <code>SoundModel</code>.
+
 
 ## Used library
+
+TODO
 
 ## Prerequisites
 I suggest you to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
