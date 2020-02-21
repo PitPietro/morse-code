@@ -12,9 +12,9 @@ import static MVC.ClipAudioPlayerModel.play;
  * Saves the user interaction whit the View and interact with the Model
  */
 public class MorseController {
-    public final String DOT_PATH = "src/audio_files/dot.wav";
-    public final String LINE_PATH = "src/audio_files/line.wav";
-    public final String PAUSE_PATH = "src/audio_files/pause.wav";
+    public static final String DOT_PATH = "src/audio_files/dot.wav";
+    public static final String LINE_PATH = "src/audio_files/line.wav";
+    public static final String PAUSE_PATH = "src/audio_files/pause.wav";
 
     private ArrayList<String> userString;
     private ArrayList<String> morseString;
