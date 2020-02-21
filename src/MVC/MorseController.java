@@ -22,8 +22,8 @@ public class MorseController {
             case "Alt Graph":
                 return false;
             case "Space":
-                addElementToUserString("");
-                addElementToMorseString("");
+                addElementToUserString(" ");
+                addElementToMorseString(" ");
                 return false;
             case "Backspace":
                 if (userString.size() > 0) {

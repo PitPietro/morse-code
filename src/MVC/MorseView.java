@@ -25,8 +25,11 @@ public class MorseView extends JFrame implements KeyListener {
 
     JPanel panelNorth;
     JPanel panelCenter;
+    JPanel panelEast;
+    JPanel panelSouth;
 
     JButton buttonSound;
+    JButton buttonGitHubLink;
 
     public MorseView() {
         setTitle("Morse GUI");
@@ -41,6 +44,11 @@ public class MorseView extends JFrame implements KeyListener {
 
         labelControllerUserString = new JLabel();
         labelControllerMorseString = new JLabel();
+        labelFooter = new JLabel("This programme is under a MIT licence. Copyright (c) 2020 Pietro Poluzzi");
+
+        buttonGitHubLink = new JButton("Open source!");
+
+        buttonSound = new JButton("Play morse");
 
         panelNorth = new JPanel();
         panelNorth.setLayout(new GridLayout(2, 2));
@@ -53,16 +61,21 @@ public class MorseView extends JFrame implements KeyListener {
         panelCenter.setLayout(new GridLayout(1, 1));
         panelCenter.add(labelMorse);
 
-        buttonSound = new JButton("Play morse");
+        panelEast = new JPanel();
+        panelEast.setLayout(new BorderLayout());
+        panelEast.add(buttonSound, BorderLayout.NORTH);
+        panelEast.add(buttonGitHubLink, BorderLayout.SOUTH);
 
-
-        labelFooter = new JLabel("This programme is under a MIT licence. Copyright (c) 2020 Pietro Poluzzi");
+        panelSouth = new JPanel();
+        panelSouth.setLayout(new GridLayout(1, 1));
+        panelSouth.add(labelFooter);
 
         controller = new MorseController();
 
         add(panelNorth, BorderLayout.NORTH);
-        add(labelFooter, BorderLayout.SOUTH);
         add(panelCenter, BorderLayout.CENTER);
+        add(panelEast, BorderLayout.EAST);
+        add(panelSouth, BorderLayout.SOUTH);
         addKeyListener(this);
         textUserInput.addKeyListener(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
