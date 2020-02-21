@@ -6,10 +6,16 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import static MVC.ClipAudioPlayerModel.play;
+
 /**
  * Saves the user interaction whit the View and interact with the Model
  */
 public class MorseController {
+    public final String DOT_PATH = "src/audio_files/dot.wav";
+    public final String LINE_PATH = "src/audio_files/line.wav";
+    public final String PAUSE_PATH = "src/audio_files/pause.wav";
+
     private ArrayList<String> userString;
     private ArrayList<String> morseString;
 
@@ -89,6 +95,7 @@ public class MorseController {
 
     public void playMorse() {
         System.out.println("SOUND");
+        play(DOT_PATH);
     }
 
     public void openProjectURL() {

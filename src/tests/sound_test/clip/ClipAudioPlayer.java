@@ -107,11 +107,8 @@ public class ClipAudioPlayer implements LineListener {
     public void update(LineEvent event) {
         LineEvent.Type type = event.getType();
 
-        if (type == LineEvent.Type.START) {
-            // System.out.println("Playback started.");
-        } else if (type == LineEvent.Type.STOP) {
+        if (type == LineEvent.Type.STOP) {
             playCompleted = true;
-            // System.out.println("Playback completed.");
         }
     }
 
