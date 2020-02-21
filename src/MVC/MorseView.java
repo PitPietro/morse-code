@@ -117,11 +117,7 @@ public class MorseView extends JFrame implements KeyListener, ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == buttonSound) {
-            try {
-                controller.playMorse();
-            } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-                e.printStackTrace();
-            }
+            controller.playMorse();
         } else if (actionEvent.getSource() == buttonGitHubLink) {
             controller.openProjectURL();
         }
