@@ -94,8 +94,25 @@ public class MorseController {
     }
 
     public void playMorse() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-        System.out.println("SOUND");
-        new ClipAudioPlayerModel().play();
+        for (int i = 0; i < morseString.size(); ++i) {
+            String mString = morseString.get(i);
+            for (int j = 0; j < mString.length(); ++j) {
+                char mChar = mString.charAt(j);
+                switch (mChar) {
+                    case '.':
+                        System.out.println("Play dot");
+                        break;
+                    case '-':
+                        System.out.println("Play line");
+                        break;
+                    case ' ':
+                        System.out.println("Play space");
+                        break;
+                    default:
+                        System.out.println("Play NOTHING");
+                }
+            }
+        }
     }
 
     public void openProjectURL() {
