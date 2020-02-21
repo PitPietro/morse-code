@@ -1,5 +1,9 @@
 package MVC;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -41,7 +45,7 @@ public class MorseController {
     }
 
     private void deleteElementToMorseString() {
-        morseString.remove(morseString.size()-1);
+        morseString.remove(morseString.size() - 1);
     }
 
     public void addElementToMorseString(String element) {
@@ -81,5 +85,17 @@ public class MorseController {
             System.out.println(msg);
         }
         return msg.toString();
+    }
+
+    public void playMorse() {
+        System.out.println("SOUND");
+    }
+
+    public void openProjectURL() {
+        try {
+            Desktop.getDesktop().browse(new URL("https://github.com/PitPietro/morse-code").toURI());
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 }

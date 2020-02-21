@@ -4,6 +4,8 @@ import javafx.util.Pair;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -13,23 +15,20 @@ import static java.awt.event.KeyEvent.getKeyText;
 /**
  * The Morse
  */
-public class MorseView extends JFrame implements KeyListener {
-    private MorseController controller;
-    private JLabel labelMorse;
+public class MorseView extends JFrame implements KeyListener, ActionListener {
     JLabel labelUserInput;
     JLabel labelFooter;
     JLabel labelControllerUserString;
     JLabel labelControllerMorseString;
-
     JTextField textUserInput;
-
     JPanel panelNorth;
     JPanel panelCenter;
     JPanel panelEast;
     JPanel panelSouth;
-
     JButton buttonSound;
     JButton buttonGitHubLink;
+    private MorseController controller;
+    private JLabel labelMorse;
 
     public MorseView() {
         setTitle("Morse GUI");
@@ -46,9 +45,10 @@ public class MorseView extends JFrame implements KeyListener {
         labelControllerMorseString = new JLabel();
         labelFooter = new JLabel("This programme is under a MIT licence. Copyright (c) 2020 Pietro Poluzzi");
 
-        buttonGitHubLink = new JButton("Open source!");
-
         buttonSound = new JButton("Play morse");
+        buttonSound.addActionListener(this);
+        buttonGitHubLink = new JButton("Open source!");
+        buttonGitHubLink.addActionListener(this);
 
         panelNorth = new JPanel();
         panelNorth.setLayout(new GridLayout(2, 2));
@@ -97,7 +97,7 @@ public class MorseView extends JFrame implements KeyListener {
 
         labelMorse.setText(pairedValue);
 
-        if(isMorseElement) {
+        if (isMorseElement) {
             controller.addElementToUserString(keyText);
             controller.addElementToMorseString(pairedValue);
         }
@@ -109,5 +109,14 @@ public class MorseView extends JFrame implements KeyListener {
     @Override
     public void keyReleased(KeyEvent keyEvent) {
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        if (actionEvent.getSource() == buttonSound) {
+            controller.playMorse();
+        } else if (actionEvent.getSource() == buttonGitHubLink) {
+            controller.openProjectURL();
+        }
     }
 }
