@@ -31,6 +31,7 @@ public class MorseController {
             case "Ctrl":
             case "Alt":
             case "Alt Graph":
+            case "Unknown keyCode: 0x0":
                 return false;
             case "Space":
                 addElementToUserString(" ");
