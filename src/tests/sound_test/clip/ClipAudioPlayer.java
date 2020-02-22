@@ -1,4 +1,4 @@
-package sound_test.clip;
+package tests.sound_test.clip;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -107,11 +107,9 @@ public class ClipAudioPlayer implements LineListener {
     public void update(LineEvent event) {
         LineEvent.Type type = event.getType();
 
-        if (type == LineEvent.Type.START) {
-            // System.out.println("Playback started.");
-        } else if (type == LineEvent.Type.STOP) {
+        if (type == LineEvent.Type.STOP) {
             playCompleted = true;
-            // System.out.println("Playback completed.");
+            System.out.println("Stop");
         }
     }
 

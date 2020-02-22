@@ -1,6 +1,6 @@
-package kotlin_morse
+package cli_morse_code.kotlin_morse
 
-import sound_test.clip.ClipAudioPlayer
+import tests.sound_test.clip.ClipAudioPlayer
 import java.util.ArrayList
 
 class KMorse() {

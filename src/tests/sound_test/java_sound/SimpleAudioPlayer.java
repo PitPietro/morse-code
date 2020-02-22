@@ -1,4 +1,4 @@
-package sound_test.java_sound;
+package tests.sound_test.java_sound;
 
 import javax.sound.sampled.*;
 import java.io.File;
@@ -48,7 +48,7 @@ public class SimpleAudioPlayer {
 
     public static void main(String[] args) {
         try {
-            filePath = "src/audio_files/Dosed.wav";
+            filePath = "src/audio_files/dot.wav";
             SimpleAudioPlayer audioPlayer =
                     new SimpleAudioPlayer();
 
