@@ -8,6 +8,7 @@ Morse code implemented in Java and Kotlin whit additional demos about the librar
   1. [How the project worked in the CLI version](#how-the-project-worked-in-the-cli-version)
   2. [GUI whit MVC](#gui-whit-mvc)
 - [Used library](#used-library)
+- [Discussion](#discussion-about-this-project)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
 - [Versioning](#versioning)
@@ -74,6 +75,10 @@ the controller. The **Play morse** button calls the <code>playMorse()</code> met
 
 
 ## Used library
+TODO
+
+## Discussion about this project
+I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).<br> The comments are very interesting, you may found a lot of inspiration.
 
 TODO
 
