@@ -5,8 +5,8 @@ Morse code implemented in Java and Kotlin whit additional demos about the librar
 
 - [What is Morse code](#what-is-morse-code)
 - [Project working](#project-working)
-  1. [How the project worked in the CLI version](#how-the-project-worked-in-the-cli-version)
-  2. [GUI whit MVC](#gui-whit-mvc)
+  - [How the project worked in the CLI version](#how-the-project-worked-in-the-cli-version)
+  - [GUI whit MVC](#gui-whit-mvc)
 - [Used library](#used-library)
   - [ArrayList](#arraylist)
   - [File](#file)
@@ -89,9 +89,9 @@ To use the ArrayList class, just add this line before the class declaration: <co
 
 ### File
 The javadocs are available at:
-- (File - SE 6)[https://docs.oracle.com/javase/6/docs/api/java/io/File.html]
-- (File - SE 7)[https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html]
-- (File - SE 8)[https://docs.oracle.com/javase/8/docs/api/?java/io/File.html]
+- [File - SE 6](https://docs.oracle.com/javase/6/docs/api/java/io/File.html)
+- [File - SE 7](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
+- [File - SE 8](https://docs.oracle.com/javase/8/docs/api/?java/io/File.html)
 
 ### Pair
 The **Pair** class has been implemented in the *javafx* package since the version 2.2. The javadocs available are the following links:
@@ -100,13 +100,17 @@ The **Pair** class has been implemented in the *javafx* package since the versio
 - [Pair - Java SE 9 & JDK 9](https://docs.oracle.com/javase/9/docs/api/javafx/util/Pair.html)
 - [Pair - Java SE 10 & JDK 10](https://docs.oracle.com/javase/10/docs/api/javafx/util/Pair.html)
 
-It is the **C++**'s [std::pair](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.pair?view=netframework-4.8) equivalent: it simply keeps a pair of values together. 
+It is the **C++**'s [std::pair](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.pair?view=netframework-4.8)
+equivalent: it simply keeps a pair of values together. 
 
 ### URL
-The [URL - SE 7](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html) class represents a Uniform Resource Locator, a pointer to a "resource" on the World Wide Web. A resource can be a file or a directory, or it can be a reference to a more complicated object, such as a query to a database or to a search engine.
+The [URL - SE 7](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html) class represents a Uniform Resource Locator,
+a pointer to a "resource" on the World Wide Web. A resource can be a file or a directory, or it can be a reference to a
+more complicated object, such as a query to a database or to a search engine.
 
 ## Discussion about this project
-I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).<br> The comments are very interesting, you may found a lot of inspiration.
+I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).
+<br> The comments are very interesting, you may found a lot of inspiration.
 
 ## Prerequisites
 I suggest you to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
