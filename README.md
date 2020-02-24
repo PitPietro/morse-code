@@ -74,7 +74,7 @@ then the controller stores the alphabetic value and the Morse value in the lists
 <code>isElement</code> method: it ignores keys like **Shift**, **Ctrl** and remove a element from the lists if the
 pressed key is **Backspace**.<br><code>MorseView</code> has a couple of buttons which are provided with an **ActionListener**.
 The *Open source!* button points to this **GitHub** repository by calling the <code>openProjectURL()</code> method from
-the controller. The **Play morse** button calls the <code>playMorse()</code> method, which calls the *static* method
+the controller. The *Play morse* button calls the <code>playMorse()</code> method, which calls the *static* method
 <code>playSound(String soundPath)</code> from <code>SoundModel</code>.
 
 
