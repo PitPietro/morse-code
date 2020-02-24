@@ -4,6 +4,9 @@ import tests.key_event_test.GUIKeyEvent;
 
 import javax.swing.*;
 
+/**
+ * Test in Beta branch
+ */
 public class MVCMain {
     public static void main(String[] args) {
         // set look and feel to the system look and feel
