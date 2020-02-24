@@ -20,9 +20,12 @@ public class MorseController {
     private ArrayList<String> userString;
     private ArrayList<String> morseString;
 
+    private static int index;
+
     public MorseController() {
         userString = new ArrayList<>();
         morseString = new ArrayList<>();
+        index = 0;
     }
 
     public boolean isElement(String element) {
@@ -34,6 +37,11 @@ public class MorseController {
             case "Unknown keyCode: 0x0":
             case "Up":
             case "Down":
+            case "Enter":
+                return false;
+            case "Left": index++;
+                return false;
+            case "Right": index--;
                 return false;
             case "Space":
                 addElementToUserString(" ");
@@ -41,8 +49,8 @@ public class MorseController {
                 return false;
             case "Backspace":
                 if (userString.size() > 0) {
-                    userString.remove(userString.size() - 1);
-                    morseString.remove(morseString.size() - 1);
+                    userString.remove(morseString.size() - index - 1);
+                    morseString.remove(morseString.size() - index - 1);
                 }
                 return false;
             default:
