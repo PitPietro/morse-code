@@ -5,7 +5,9 @@ import tests.key_event_test.GUIKeyEvent;
 import javax.swing.*;
 
 /**
- * Test in Beta branch
+ * Build and run the application:
+ * https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html#run_app
+ * The tutorial also show how to package in application in a JAR, run the package application
  */
 public class MVCMain {
     public static void main(String[] args) {
