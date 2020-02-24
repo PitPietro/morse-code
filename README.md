@@ -5,9 +5,13 @@ Morse code implemented in Java and Kotlin whit additional demos about the librar
 
 - [What is Morse code](#what-is-morse-code)
 - [Project working](#project-working)
-  1. [How the project worked in the CLI version](#how-the-project-worked-in-the-cli-version)
-  2. [GUI whit MVC](#gui-whit-mvc)
+  - [How the project worked in the CLI version](#how-the-project-worked-in-the-cli-version)
+  - [GUI whit MVC](#gui-whit-mvc)
 - [Used library](#used-library)
+  - [ArrayList](#arraylist)
+  - [File](#file)
+  - [Pair](#pair)
+  - [URL](#url)
 - [Discussion](#discussion-about-this-project)
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
@@ -75,12 +79,38 @@ the controller. The **Play morse** button calls the <code>playMorse()</code> met
 
 
 ## Used library
-TODO
+The Oracle documentation is divided into different javadocs depending on the **SE** (Standard Edition) or the **JDK** (Java Development Kit) version.
+
+### ArrayList
+To use the ArrayList class, just add this line before the class declaration: <code>import java.util.ArrayList</code>. Most of the IDEs will automatically add it whenever you start implementing it in the code.
+- [ArrayList - Java Platform SE 7](https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html)
+- [ArrayList - Java Platform SE 8](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+- [ArrayList - Java Platform SE 9 & JDK 9](https://docs.oracle.com/javase/9/docs/api/java/util/ArrayList.html)
+
+### File
+The javadocs are available at:
+- [File - SE 6](https://docs.oracle.com/javase/6/docs/api/java/io/File.html)
+- [File - SE 7](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
+- [File - SE 8](https://docs.oracle.com/javase/8/docs/api/?java/io/File.html)
+
+### Pair
+The **Pair** class has been implemented in the *javafx* package since the version 2.2. The javadocs available are the following links:
+- [Pair - JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/util/Pair.html)
+- [Pair - JavaFX 8](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html)
+- [Pair - Java SE 9 & JDK 9](https://docs.oracle.com/javase/9/docs/api/javafx/util/Pair.html)
+- [Pair - Java SE 10 & JDK 10](https://docs.oracle.com/javase/10/docs/api/javafx/util/Pair.html)
+
+It is the **C++**'s [std::pair](https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.pair?view=netframework-4.8)
+equivalent: it simply keeps a pair of values together. 
+
+### URL
+The [URL - SE 7](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html) class represents a Uniform Resource Locator,
+a pointer to a "resource" on the World Wide Web. A resource can be a file or a directory, or it can be a reference to a
+more complicated object, such as a query to a database or to a search engine.
 
 ## Discussion about this project
-I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).<br> The comments are very interesting, you may found a lot of inspiration.
-
-TODO
+I shared this project in Reddit: [I just released on GitHub one of my first project ... !](https://www.reddit.com/r/java/comments/f55gj2/i_just_released_on_github_one_of_my_first_project/).
+<br> The comments are very interesting, you may found a lot of inspiration.
 
 ## Prerequisites
 I suggest you to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) before clone this repository.
